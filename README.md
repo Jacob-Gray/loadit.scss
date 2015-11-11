@@ -8,7 +8,6 @@ Import the _loadit.scss file:
 ```css
 @import "loadit";
 ```
-Then add your loaders like this:
 No extra html elements needed, simply use a single element, and add the mixin in your SCSS:
 ```html
 <div class="loadingDiv"></div>
