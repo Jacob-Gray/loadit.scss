@@ -19,44 +19,93 @@
     </section>
 
     <section class="main-content">
-<h1>Documentation</h1>
- <table style="width:100%">
-  <tr>
-    <th>Loader Name</th>
-    <th>Options</th>
-    <th>Available Animations</th>
-  </tr>  
-  <tr>
-    <td><pre>loadit-dots</pre></td>
-    <td><pre>$color,$size,$animation,$speed</pre></td>
-    <td><pre>fade - default, drop, bounce</pre></td>
-  </tr>
-  <tr>
-    <td><pre>loadit-ball</pre></td>
-    <td><pre>$color,$size,$animation,$speed</pre></td>
-    <td><pre>bounce - default, roll, move</pre></td>
-  </tr>  
-  <tr>
-    <td><pre>loadit-square</pre></td>
-    <td><pre>$color,$secColor,$size,$animation,$speed</pre></td>
-    <td><pre>flip - default, fill</pre></td>
-  </tr>  
-  <tr>
-    <td><pre>loadit-target</pre></td>
-    <td><pre>$color,$secColor,$size,$animation,$speed</pre></td>
-    <td><pre>pulse - default, switch, smudge, circle, slice, wedge</pre></td>
-  </tr>  
-  <tr>
-    <td><pre>loadit-bars</pre></td>
-    <td><pre>$color,$size,$animation,$speed</pre></td>
-    <td><pre>radio - default, wave</pre></td>
-  </tr>
-  <tr>
-    <td><pre>loadit-spinner</pre></td>
-    <td><pre>$color,$size,$animation,$speed</pre></td>
-    <td><pre>dots - default, indicate, inside, ball</pre></td>
-  </tr>
-</table> 
+      <h1>Documentation</h1>
+      <p>Below are the current list of mixins, options, and animations. A loader that uses all the options would look like this:</p>
+      <pre>
+        .loaderDemo{
+         @include loadit-target($color:purple,$secColor:red,$size:50px,$animation:switch,$speed,3s);
+        }
+      </pre>
+      <p>The outputed CSS would look like this(you can play with it and see the effect below):</p>
+      <style contenteditable>
+          .loaderDemo { 
+            width: 50px; 
+            height: 50px; 
+            position: relative; 
+            display: inline-block; 
+          }
+          .loaderDemo:before { 
+            content: ""; 
+            border-radius: 50%; 
+            position: absolute; 
+            z-index: 0; 
+            top: 0; 
+            left: 0; 
+            bottom: 0; 
+            right: 0; 
+            border: 12.5px purple solid; 
+            animation: target-switch 4s linear infinite; 
+            background: red; 
+          }
+
+          @keyframes target-switch { 6% { border-width: 6.25px; }
+            25% { border-width: 25px;
+              background: red;
+              border-color: purple; }
+            26% { background: purple;
+              border-color: transparent; }
+            27% { border-color: red;
+              border-width: 0; }
+            50% { border-width: 12.5px; }
+            56% { border-width: 6.25px; }
+            75% { border-width: 25px;
+              background: purple;
+              border-color: red; }
+            76% { background: red;
+              border-color: transparent; }
+            77% { border-color: purple;
+              border-width: 0; }
+            100% { border-width: 12.5px; } }
+      </style>
+      <p>And look like this:</p>
+      <div class="loaderDemo"></div>
+       <table style="width:100%">
+        <tr>
+          <th>Loader Name</th>
+          <th>Options</th>
+          <th>Available Animations</th>
+        </tr>  
+        <tr>
+          <td><pre>loadit-dots</pre></td>
+          <td><pre>$color,$size,$animation,$speed</pre></td>
+          <td><pre>fade - default, drop, bounce</pre></td>
+        </tr>
+        <tr>
+          <td><pre>loadit-ball</pre></td>
+          <td><pre>$color,$size,$animation,$speed</pre></td>
+          <td><pre>bounce - default, roll, move</pre></td>
+        </tr>  
+        <tr>
+          <td><pre>loadit-square</pre></td>
+          <td><pre>$color,$secColor,$size,$animation,$speed</pre></td>
+          <td><pre>flip - default, fill</pre></td>
+        </tr>  
+        <tr>
+          <td><pre>loadit-target</pre></td>
+          <td><pre>$color,$secColor,$size,$animation,$speed</pre></td>
+          <td><pre>pulse - default, switch, smudge, circle, slice, wedge</pre></td>
+        </tr>  
+        <tr>
+          <td><pre>loadit-bars</pre></td>
+          <td><pre>$color,$size,$animation,$speed</pre></td>
+          <td><pre>radio - default, wave</pre></td>
+        </tr>
+        <tr>
+          <td><pre>loadit-spinner</pre></td>
+          <td><pre>$color,$size,$animation,$speed</pre></td>
+          <td><pre>dots - default, indicate, inside, ball</pre></td>
+        </tr>
+      </table> 
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/Jacob-Gray/loadit">Loadit</a> is maintained by <a href="https://github.com/Jacob-Gray">Jacob-Gray</a>.</span>
