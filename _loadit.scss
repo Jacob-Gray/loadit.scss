@@ -1,0 +1,719 @@
+/*Copyright (c) 2015 Jacob Gray
+
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.*/
+$loaditDefaultColor:#43c1ea;
+$loaditDefaultSecondaryColor:white;
+$loaditAnimationsAdded:();
+@mixin loadit-animation($name, $size:50px, $color:black, $secColor:white) {
+    //Checks if the keyframe has already been added, so it isn't added twice
+    @if index($loaditAnimationsAdded, $name)==null {
+        $loaditAnimationsAdded: append($loaditAnimationsAdded, $name) !global;
+        //<dots-animation>
+        @if $name==dots-fade {
+            @keyframes $name {
+                40% {
+                    background: transparent;
+                }
+                80% {
+                    background: $color;
+                }
+            }
+        }
+        @if $name==dots-drop {
+            @keyframes $name {
+                40% {
+                    background: transparent;
+                    transform: translateY($size/4);
+                }
+                50% {
+                    background: transparent;
+                    transform: translateY(-$size/4);
+                }
+                60% {
+                    background: transparent;
+                    transform: translateY(-$size/4);
+                }
+                90% {
+                    background: $color;
+                    transform: translateY(0);
+                }
+            }
+        }
+        @if $name==dots-bounce {
+            @keyframes $name {
+                50% {
+                    transform: translateY(-$size/8);
+                }
+            }
+        }
+        //</dots-animation>
+        //<spinner-animation>
+        @if $name==spinner-dots {
+            @keyframes $name {
+                50% {
+                    top: $size/4;
+                    bottom: $size/4;
+                    left: $size/4;
+                    right: $size/4;
+                    border-width: $size/3;
+                    transform: rotate(180deg);
+                }
+                100% {
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    border-width: $size/2;
+                    transform: rotate(360deg);
+                }
+            }
+        }
+        @if $name==spinner-indicate {
+            @keyframes $name {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+        @if $name==spinner-ball {
+            @keyframes $name {
+                25% {
+                    top: $size/8*3;
+                    left: $size/8*6;
+                }
+                50% {
+                    top: $size/8*6;
+                    left: $size/8*3;
+                }
+                75% {
+                    top: $size/8*3;
+                    left: 0;
+                }
+                100% {
+                    top: 0;
+                    left: $size/8*3;
+                }
+            }
+        }
+        //<spinner-animation>
+        //<target-animations>
+        @if $name==target-circle {
+            @keyframes $name {
+                12.5% {
+                    border-top-color: transparent;
+                }
+                25% {
+                    border-right-color: transparent;
+                }
+                37.5% {
+                    border-bottom-color: transparent;
+                }
+                50% {
+                    border-left-color: transparent;
+                }
+                62.5% {
+                    border-top-color: $color;
+                }
+                75% {
+                    border-right-color: $color;
+                }
+                87.5% {
+                    border-bottom-color: $color;
+                }
+                100% {
+                    border-left-color: $color;
+                }
+            }
+        }
+        @if $name==target-wedge {
+            @keyframes $name {
+                20% {
+                    border-color: $color;
+                    border-top-color: transparent;
+                }
+                40% {
+                    border-color: $color;
+                    border-right-color: transparent;
+                }
+                60% {
+                    border-color: $color;
+                    border-bottom-color: transparent;
+                }
+                80% {
+                    border-color: $color;
+                    border-left-color: transparent;
+                }
+                100% {
+                    border-color: $color;
+                }
+            }
+        }
+        @if $name==target-slice {
+            @keyframes $name {
+                12.5% {
+                    border-top-color: transparent;
+                }
+                25% {
+                    border-right-color: transparent;
+                }
+                37.5% {
+                    border-bottom-color: transparent;
+                }
+                50% {
+                    border-left-color: transparent;
+                }
+                62.5% {
+                    border-top-color: $color;
+                }
+                75% {
+                    border-right-color: $color;
+                }
+                87.5% {
+                    border-bottom-color: $color;
+                }
+                100% {
+                    border-left-color: $color;
+                }
+            }
+        }
+        @if $name==target-switch {
+            @keyframes $name {
+                6% {
+                    border-width: $size/4-($size/8);
+                }
+                25% {
+                    border-width: $size/2;
+                    background: $secColor;
+                    border-color: $color;
+                }
+                26% {
+                    background: $color;
+                    border-color: transparent;
+                }
+                27% {
+                    border-color: $secColor;
+                    border-width: 0;
+                }
+                50% {
+                    border-width: $size/4;
+                }
+                //Start of new cycle
+                56% {
+                    border-width: $size/4-($size/8);
+                }
+                75% {
+                    border-width: $size/2;
+                    background: $color;
+                    border-color: $secColor;
+                }
+                76% {
+                    background: $secColor;
+                    border-color: transparent;
+                }
+                77% {
+                    border-color: $color;
+                    border-width: 0;
+                }
+                100% {
+                    border-width: $size/4;
+                }
+            }
+        }
+        @if $name==target-pulse {
+            @keyframes $name {
+                25% {
+                    border-width: $size/8;
+                }
+                100% {
+                    border-width: $size/2;
+                }
+            }
+        }
+        @if $name==target-smudge {
+            @keyframes $name {
+                12.5% {
+                    border-top-width: 0;
+                }
+                25% {
+                    border-right-width: 0;
+                }
+                37.5% {
+                    border-bottom-width: 0;
+                }
+                50% {
+                    border-left-width: 0;
+                }
+                62.5% {
+                    border-top-width: $size/4;
+                }
+                75% {
+                    border-right-width: $size/4;
+                }
+                87.5% {
+                    border-bottom-width: $size/4;
+                }
+                100% {
+                    border-left-width: $size/4;
+                }
+            }
+        }
+        //</target-animation>
+        //<bars-animation>
+        @if $name==bars-radioParent {
+            @keyframes $name {
+                20% {
+                    margin-top: $size/2;
+                    height: $size/2;
+                }
+                40% {
+                    margin-top: $size/3 * 2;
+                    height: $size/3;
+                }
+                100% {
+                    height: $size;
+                    margin-top: 0;
+                }
+            }
+        }
+        @if $name==bars-radio {
+            @keyframes $name {
+                50% {
+                    height: $size/3;
+                }
+            }
+        }
+        @if $name==bars-waveParent {
+            @keyframes $name {
+                50% {
+                    margin-top: $size/3 * 2;
+                    height: $size/3;
+                }
+                100% {
+                    height: $size;
+                    margin-top: 0;
+                }
+            }
+        }
+        @if $name==bars-wave {
+            @keyframes $name {
+                20% {
+                    height: $size/2;
+                }
+                40% {
+                    height: $size/3;
+                }
+                100% {
+                    height: $size;
+                }
+            }
+        }
+        //</bars-animation>
+        //<ball-animation>
+        @if $name==ball-bounce {
+            @keyframes $name {
+                20% {
+                    bottom: $size/2;
+                }
+                30% {
+                    bottom: 0;
+                }
+                35% {
+                    bottom: $size/4;
+                }
+                40% {
+                    bottom: 0;
+                }
+                45% {
+                    bottom: $size/6;
+                }
+                50% {
+                    bottom: 0;
+                }
+                54% {
+                    bottom: $size/8;
+                }
+                58% {
+                    bottom: 0;
+                }
+                62% {
+                    bottom: $size/10;
+                }
+                68% {
+                    bottom: 0;
+                }
+            }
+        }
+        @if $name==ball-roll {
+            @keyframes $name {
+                25% {
+                    bottom: 0;
+                }
+                50% {
+                    bottom: $size/2;
+                }
+                75% {
+                    bottom: $size/2;
+                }
+                100% {
+                    bottom: 0;
+                }
+            }
+        }
+        @if $name==ball-rollGroove {
+            @keyframes $name {
+                25% {
+                    transform: rotate(180deg);
+                }
+                50% {
+                    transform: rotate(180deg);
+                }
+                75% {
+                    transform: rotate(360deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+        @if $name==ball-move {
+            @keyframes $name {
+                50% {
+                    bottom: $size/2;
+                }
+                100% {
+                    bottom: 0;
+                }
+            }
+        }
+        @if $name==ball-moveFloor {
+            @keyframes $name {
+                100% {
+                    background-position: -$size;
+                }
+            }
+        }
+        //</ball-animation>
+        //<square-animation>
+        @if $name==square-flip {
+            @keyframes $name {
+                25% {
+                    transform: rotateX(180deg);
+                }
+                50% {
+                    transform: rotateY(180deg) rotateX(180deg);
+                }
+                75% {
+                    transform: rotateX(0deg) rotateY(180deg);
+                }
+                100% {
+                    transform: rotateY(0deg);
+                }
+            }
+        }
+        @if $name==square-fill {
+            @keyframes $name {
+                25% {
+                    transform: rotate(180deg);
+                    box-shadow: inset 0 0 0 $secColor;
+                }
+                50% {
+                    box-shadow: inset 0 -#{$size} 0 $secColor;
+                    transform: rotate(180deg);
+					color:$color;
+                }
+                75% {
+                    box-shadow: inset 0 -#{$size} 0 $secColor;
+                    transform: rotate(360deg);
+					color:$color;
+                }
+                100% {
+                    transform: rotate(360deg);
+                    box-shadow: inset 0 0 0 $secColor;
+                }
+            }
+        }
+    }
+}
+
+//</square-animation>
+@mixin loadit-dots($color:$loaditDefaultColor, $size:50px, $animation:fade, $speed:3s) {
+    $prefix: dots-;
+    $a: $prefix+$animation;
+    position: relative;
+    background: $color;
+    width: $size/5;
+    height: $size/5;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: $size/2;
+    margin-left: $size/2;
+    animation: $a $speed linear infinite;
+    animation-delay: $speed/6;
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: $size/5;
+        width: $size/5;
+        border-radius: 50%;
+        background: $color;
+        animation: $a $speed ease infinite;
+    }
+    &:before {
+        left: -$size/4;
+    }
+    &:after {
+        right: -$size/4;
+        animation-delay: $speed/4;
+    }
+    @include loadit-animation(dots-+$animation, $color:$color);
+}
+
+@mixin loadit-spinner($color:$loaditDefaultColor, $size:50px, $animation:dots, $speed:2s) {
+    $prefix: spinner-;
+    $a: $prefix+$animation;
+    display: inline-block;
+    width: $size;
+    height: $size;
+    position: relative;
+    @if $animation==inside {
+        $a: $prefix+indicate;
+        animation: $prefix+indicate $speed infinite linear;
+        transform-origin: center;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border: $size/2 $color solid;
+        animation: $a $speed linear infinite;
+        @if $animation==dots {
+            border-image: radial-gradient($color 50%, transparent 50%);
+        }
+        @if $animation==inside {
+            animation: none;
+            border-width: $size/10;
+            border-radius: 50%;
+        }
+        @if $animation==ball {
+            animation: none;
+            transform: rotate(45deg);
+            border: 1px solid $color;
+            top: $size/4;
+            left: $size/4;
+            bottom: $size/4;
+            right: $size/4;
+        }
+        @if $animation==indicate {
+            border-radius: 50%;
+            border-width: $size/15;
+            border-right-width: 0;
+            border-top-width: 0;
+        }
+    }
+    &:after {
+        content: "";
+        @if $animation==inside {
+            position: absolute;
+            bottom: 0;
+            left: $size/4;
+            right: $size/4;
+            width: $size/2;
+            background: $color;
+            height: $size/2;
+            border-radius: 50%;
+        }
+        @if $animation==ball {
+            border: none;
+            width: $size/8*2;
+            height: $size/8*2;
+            border-radius: 50%;
+            position: absolute;
+            animation: $a $speed linear infinite;
+            top: 0;
+            left: $size/8*3;
+            background: $color;
+        }
+    }
+    @include loadit-animation($a);
+}
+
+@mixin loadit-bars($color:$loaditDefaultColor, $size:50px, $animation:radio, $speed:.7s) {
+    $prefix: bars-;
+    $a: $prefix+$animation;
+    position: relative;
+    background: $color;
+    width: $size/5;
+    height: $size;
+    display: inline-block;
+    margin-right: $size/2;
+    margin-left: $size/2;
+    animation: $a+Parent $speed linear infinite;
+    @if $animation==wave {
+        animation-delay: $speed/5;
+    }
+    &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: $size;
+        left: -$size/2.5;
+        width: $size/5;
+        background: $color;
+        animation: $a $speed linear infinite;
+        @if $animation==radio {
+            animation-delay: $speed/3;
+        }
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: $size;
+        right: -$size/2.5;
+        width: $size/5;
+        background: $color;
+        animation: $a $speed linear infinite;
+        @if $animation==radio {
+            animation-delay: $speed/5;
+        }
+        @if $animation==wave {
+            animation-delay: $speed/2;
+        }
+    }
+    @include loadit-animation($a, $size);
+    @include loadit-animation($a+Parent, $size);
+}
+
+@mixin loadit-target($color: $loaditDefaultColor, $secColor:$loaditDefaultSecondaryColor, $size:50px, $animation:pulse, $speed:4s) {
+    $prefix: target-;
+    $a: $prefix+$animation;
+    & {
+        width: $size;
+        height: $size;
+        position: relative;
+        display: inline-block;
+    }
+    &:before {
+        content: "";
+        border-radius: 50%;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        border: $size/4 $color solid;
+        animation: $a $speed linear infinite;
+        background: $secColor;
+        @if $animation==circle {
+            border: $size/8 $color solid;
+        }
+        @if $animation==wedge {
+            border: $size/2 $color solid;
+        }
+        @if $animation==slice {
+            border: $size/2 $color solid;
+        }
+        @if $animation==smudge {
+            animation-timing-function: ease-in-out;
+        }
+    }
+    @include loadit-animation($name:$a, $color:$color, $secColor:$secColor);
+}
+
+@mixin loadit-ball($color: $loaditDefaultColor, $size:50px, $animation:bounce, $speed:2s) {
+    $prefix: ball-;
+    $a: $prefix+$animation;
+    & {
+        width: $size;
+        height: $size;
+        position: relative;
+        display: inline-block;
+        @if $animation==roll {
+            animation: $a+Groove linear infinite $speed;
+        }
+    }
+    &:before {
+        content: "";
+        border-radius: 50%;
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        left: $size/4;
+        width: $size/2;
+        height: $size/2;
+        animation: $a $speed linear infinite;
+        background: $color;
+    }
+    &:after {
+        content: "";
+        @if $animation==roll {
+            position: absolute;
+            height: $size;
+            width: $size/2;
+            left: $size/4-1px;
+            border-radius: $size/2;
+            border: 1px solid $color;
+        }
+        @if $animation==move {
+            position: absolute;
+            bottom: 0;
+            height: $size/8;
+            background: linear-gradient(90deg, transparent 33%, $color 33%, $color 66%, transparent 66%) scroll repeat;
+            width: $size;
+            animation: $a+Floor linear infinite $speed;
+        }
+    }
+    @include loadit-animation($a, $size:$size);
+    @if $animation==roll {
+        @include loadit-animation($a+Groove);
+    }
+    @if $animation==move {
+        @include loadit-animation($a+Floor, $size);
+    }
+}
+
+@mixin loadit-square($color: $loaditDefaultColor, $secColor: $loaditDefaultSecondaryColor, $size:50px, $animation:flip, $speed:2s) {
+    $prefix: square-;
+    $a: $prefix+$animation;
+    & {
+        width: $size - 1;
+        height: $size - 1;
+        border: 1px solid $color;
+        display: inline-block;
+        animation: $a $speed linear infinite;
+        background: $color;
+        font-size: 150%;
+        text-align: center;
+        line-height: $size;
+        color: $secColor;
+        font-style: normal;
+    }
+    @include loadit-animation($a, $size:$size, $color:$color, $secColor:$secColor);
+}
