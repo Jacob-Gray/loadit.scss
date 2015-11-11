@@ -23,7 +23,7 @@ It can also take arguments, with many different animations available:
   @include loadit-target($color:red,$size:20px,$animation:wave);
 }
 ```
-[Demos](http://jacob-gray.github.io/loadit.scss/samples)
+[Demos](http://jacob-gray.github.io/loadit.scss/demos)
 -
 [Documentation](http://jacob-gray.github.io/loadit.scss/docs)
 -
