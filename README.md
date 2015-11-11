@@ -1,5 +1,12 @@
 <img src="http://s27.postimg.org/o4m4qphb7/loader.png">
-*Currently version 0.9*
+*Currently version 0.9 - 20 loaders*
+
+***
+
+[Demos](http://jacob-gray.github.io/loadit.scss/demos) | [Documentation](http://jacob-gray.github.io/loadit.scss/docs)
+
+
+***
 
 A SCSS mixin that turns a single element into a loading icon, built with just CSS! 
 How to use
@@ -23,10 +30,11 @@ It can also take arguments, with many different animations available:
   @include loadit-target($color:red,$size:20px,$animation:wave);
 }
 ```
-[Demos](http://jacob-gray.github.io/loadit.scss/demos)
--
-[Documentation](http://jacob-gray.github.io/loadit.scss/docs)
--
+
+
+
+
+
 
 
 
