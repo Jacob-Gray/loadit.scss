@@ -1,0 +1,273 @@
+/* line 2, C:/Users/Jacob/Desktop/simplyload/stylesheet.scss */ .dots { position: relative; background: #43c1ea; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 25px; margin-left: 25px; animation: dots-fade 3s linear infinite; animation-delay: 0.5s; }
+
+/* line 452, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .dots:before, .dots:after { content: ""; position: absolute; bottom: 0; height: 10px; width: 10px; border-radius: 50%; background: #43c1ea; animation: dots-fade 3s ease infinite; }
+
+/* line 462, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .dots:before { left: -12.5px; }
+
+/* line 465, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .dots:after { right: -12.5px; animation-delay: 0.75s; }
+
+@keyframes dots-fade { 40% { background: transparent; }
+  80% { background: #43c1ea; } }
+
+/* line 6, C:/Users/Jacob/Desktop/simplyload/stylesheet.scss */ .dots1 { position: relative; background: #43c1ea; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 25px; margin-left: 25px; animation: dots-fade 3s linear infinite; animation-delay: 0.5s; }
+
+/* line 452, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .dots1:before, .dots1:after { content: ""; position: absolute; bottom: 0; height: 10px; width: 10px; border-radius: 50%; background: #43c1ea; animation: dots-fade 3s ease infinite; }
+
+/* line 462, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .dots1:before { left: -12.5px; }
+
+/* line 465, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .dots1:after { right: -12.5px; animation-delay: 0.75s; }
+
+/* line 10, C:/Users/Jacob/Desktop/simplyload/stylesheet.scss */ .dotsD { position: relative; background: #43c1ea; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 25px; margin-left: 25px; animation: dots-drop 3s linear infinite; animation-delay: 0.5s; }
+
+/* line 452, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .dotsD:before, .dotsD:after { content: ""; position: absolute; bottom: 0; height: 10px; width: 10px; border-radius: 50%; background: #43c1ea; animation: dots-drop 3s ease infinite; }
+
+/* line 462, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .dotsD:before { left: -12.5px; }
+
+/* line 465, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .dotsD:after { right: -12.5px; animation-delay: 0.75s; }
+
+@keyframes dots-drop { 40% { background: transparent;
+    transform: translateY(12.5px); }
+  50% { background: transparent;
+    transform: translateY(-12.5px); }
+  60% { background: transparent;
+    transform: translateY(-12.5px); }
+  90% { background: #43c1ea;
+    transform: translateY(0); } }
+
+/* line 14, C:/Users/Jacob/Desktop/simplyload/stylesheet.scss */ .dotsB { position: relative; background: #43c1ea; width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 25px; margin-left: 25px; animation: dots-bounce 3s linear infinite; animation-delay: 0.5s; }
+
+/* line 452, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .dotsB:before, .dotsB:after { content: ""; position: absolute; bottom: 0; height: 10px; width: 10px; border-radius: 50%; background: #43c1ea; animation: dots-bounce 3s ease infinite; }
+
+/* line 462, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .dotsB:before { left: -12.5px; }
+
+/* line 465, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .dotsB:after { right: -12.5px; animation-delay: 0.75s; }
+
+@keyframes dots-bounce { 50% { transform: translateY(-6.25px); } }
+
+/* line 631, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .ball { width: 50px; height: 50px; position: relative; display: inline-block; }
+
+/* line 640, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .ball:before { content: ""; border-radius: 50%; position: absolute; z-index: 0; bottom: 0; left: 12.5px; width: 25px; height: 25px; animation: ball-bounce 2s linear infinite; background: #43c1ea; }
+
+/* line 652, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .ball:after { content: ""; }
+
+@keyframes ball-bounce { 20% { bottom: 25px; }
+  30% { bottom: 0; }
+  35% { bottom: 12.5px; }
+  40% { bottom: 0; }
+  45% { bottom: 8.33333px; }
+  50% { bottom: 0; }
+  54% { bottom: 6.25px; }
+  58% { bottom: 0; }
+  62% { bottom: 5px; }
+  68% { bottom: 0; } }
+
+/* line 631, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .ballR { width: 50px; height: 50px; position: relative; display: inline-block; animation: ball-rollGroove linear infinite 2s; }
+
+/* line 640, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .ballR:before { content: ""; border-radius: 50%; position: absolute; z-index: 0; bottom: 0; left: 12.5px; width: 25px; height: 25px; animation: ball-roll 2s linear infinite; background: #43c1ea; }
+
+/* line 652, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .ballR:after { content: ""; position: absolute; height: 50px; width: 25px; left: 11.5px; border-radius: 25px; border: 1px solid #43c1ea; }
+
+@keyframes ball-roll { 25% { bottom: 0; }
+  50% { bottom: 25px; }
+  75% { bottom: 25px; }
+  100% { bottom: 0; } }
+
+@keyframes ball-rollGroove { 25% { transform: rotate(180deg); }
+  50% { transform: rotate(180deg); }
+  75% { transform: rotate(360deg); }
+  100% { transform: rotate(360deg); } }
+
+/* line 631, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .ballM { width: 50px; height: 50px; position: relative; display: inline-block; }
+
+/* line 640, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .ballM:before { content: ""; border-radius: 50%; position: absolute; z-index: 0; bottom: 0; left: 12.5px; width: 25px; height: 25px; animation: ball-move 2s linear infinite; background: #43c1ea; }
+
+/* line 652, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .ballM:after { content: ""; position: absolute; bottom: 0; height: 6.25px; background: linear-gradient(90deg, transparent 33%, #43c1ea 33%, #43c1ea 66%, transparent 66%) scroll repeat; width: 50px; animation: ball-moveFloor linear infinite 2s; }
+
+@keyframes ball-move { 50% { bottom: 25px; }
+  100% { bottom: 0; } }
+
+@keyframes ball-moveFloor { 100% { background-position: -50px; } }
+
+/* line 683, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .square { width: 49px; height: 49px; border: 1px solid #43c1ea; display: inline-block; animation: square-flip 2s linear infinite; background: #43c1ea; font-size: 150%; text-align: center; line-height: 50px; color: white; font-style: normal; }
+
+@keyframes square-flip { 25% { transform: rotateX(180deg); }
+  50% { transform: rotateY(180deg) rotateX(180deg); }
+  75% { transform: rotateX(0deg) rotateY(180deg); }
+  100% { transform: rotateY(0deg); } }
+
+/* line 683, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .squareF { width: 49px; height: 49px; border: 1px solid #43c1ea; display: inline-block; animation: square-fill 2s linear infinite; background: #43c1ea; font-size: 150%; text-align: center; line-height: 50px; color: white; font-style: normal; }
+
+@keyframes square-fill { 25% { transform: rotate(180deg);
+    box-shadow: inset 0 0 0 white; }
+  50% { box-shadow: inset 0 -50px 0 white;
+    transform: rotate(180deg);
+    color: #43c1ea; }
+  75% { box-shadow: inset 0 -50px 0 white;
+    transform: rotate(360deg);
+    color: #43c1ea; }
+  100% { transform: rotate(360deg);
+    box-shadow: inset 0 0 0 white; } }
+
+/* line 594, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .target { width: 50px; height: 50px; position: relative; display: inline-block; }
+
+/* line 600, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .target:before { content: ""; border-radius: 50%; position: absolute; z-index: 0; top: 0; left: 0; bottom: 0; right: 0; border: 12.5px #43c1ea solid; animation: target-pulse 1s linear infinite; background: white; }
+
+@keyframes target-pulse { 25% { border-width: 6.25px; }
+  100% { border-width: 25px; } }
+
+/* line 594, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .targetSw { width: 50px; height: 50px; position: relative; display: inline-block; }
+
+/* line 600, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .targetSw:before { content: ""; border-radius: 50%; position: absolute; z-index: 0; top: 0; left: 0; bottom: 0; right: 0; border: 12.5px #43c1ea solid; animation: target-switch 4s linear infinite; background: white; }
+
+@keyframes target-switch { 6% { border-width: 6.25px; }
+  25% { border-width: 25px;
+    background: white;
+    border-color: #43c1ea; }
+  26% { background: #43c1ea;
+    border-color: transparent; }
+  27% { border-color: white;
+    border-width: 0; }
+  50% { border-width: 12.5px; }
+  56% { border-width: 6.25px; }
+  75% { border-width: 25px;
+    background: #43c1ea;
+    border-color: white; }
+  76% { background: white;
+    border-color: transparent; }
+  77% { border-color: #43c1ea;
+    border-width: 0; }
+  100% { border-width: 12.5px; } }
+
+/* line 594, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .targetSm { width: 50px; height: 50px; position: relative; display: inline-block; }
+
+/* line 600, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .targetSm:before { content: ""; border-radius: 50%; position: absolute; z-index: 0; top: 0; left: 0; bottom: 0; right: 0; border: 12.5px #43c1ea solid; animation: target-smudge 4s linear infinite; background: white; animation-timing-function: ease-in-out; }
+
+@keyframes target-smudge { 12.5% { border-top-width: 0; }
+  25% { border-right-width: 0; }
+  37.5% { border-bottom-width: 0; }
+  50% { border-left-width: 0; }
+  62.5% { border-top-width: 12.5px; }
+  75% { border-right-width: 12.5px; }
+  87.5% { border-bottom-width: 12.5px; }
+  100% { border-left-width: 12.5px; } }
+
+/* line 594, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .targetC { width: 50px; height: 50px; position: relative; display: inline-block; }
+
+/* line 600, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .targetC:before { content: ""; border-radius: 50%; position: absolute; z-index: 0; top: 0; left: 0; bottom: 0; right: 0; border: 12.5px #43c1ea solid; animation: target-circle 4s linear infinite; background: white; border: 6.25px #43c1ea solid; }
+
+@keyframes target-circle { 12.5% { border-top-color: transparent; }
+  25% { border-right-color: transparent; }
+  37.5% { border-bottom-color: transparent; }
+  50% { border-left-color: transparent; }
+  62.5% { border-top-color: #43c1ea; }
+  75% { border-right-color: #43c1ea; }
+  87.5% { border-bottom-color: #43c1ea; }
+  100% { border-left-color: #43c1ea; } }
+
+/* line 594, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .targetW { width: 50px; height: 50px; position: relative; display: inline-block; }
+
+/* line 600, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .targetW:before { content: ""; border-radius: 50%; position: absolute; z-index: 0; top: 0; left: 0; bottom: 0; right: 0; border: 12.5px #43c1ea solid; animation: target-wedge 4s linear infinite; background: white; border: 25px #43c1ea solid; }
+
+@keyframes target-wedge { 20% { border-color: #43c1ea;
+    border-top-color: transparent; }
+  40% { border-color: #43c1ea;
+    border-right-color: transparent; }
+  60% { border-color: #43c1ea;
+    border-bottom-color: transparent; }
+  80% { border-color: #43c1ea;
+    border-left-color: transparent; }
+  100% { border-color: #43c1ea; } }
+
+/* line 594, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .targetSl { width: 50px; height: 50px; position: relative; display: inline-block; }
+
+/* line 600, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .targetSl:before { content: ""; border-radius: 50%; position: absolute; z-index: 0; top: 0; left: 0; bottom: 0; right: 0; border: 12.5px #43c1ea solid; animation: target-slice 4s linear infinite; background: white; border: 25px #43c1ea solid; }
+
+@keyframes target-slice { 12.5% { border-top-color: transparent; }
+  25% { border-right-color: transparent; }
+  37.5% { border-bottom-color: transparent; }
+  50% { border-left-color: transparent; }
+  62.5% { border-top-color: #43c1ea; }
+  75% { border-right-color: #43c1ea; }
+  87.5% { border-bottom-color: #43c1ea; }
+  100% { border-left-color: #43c1ea; } }
+
+/* line 62, C:/Users/Jacob/Desktop/simplyload/stylesheet.scss */ .bar { position: relative; background: #43c1ea; width: 10px; height: 50px; display: inline-block; margin-right: 25px; margin-left: 25px; animation: bars-radioParent 0.7s linear infinite; }
+
+/* line 558, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .bar:before { content: ""; position: absolute; bottom: 0; height: 50px; left: -20px; width: 10px; background: #43c1ea; animation: bars-radio 0.7s linear infinite; animation-delay: 0.23333s; }
+
+/* line 571, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .bar:after { content: ""; position: absolute; bottom: 0; height: 50px; right: -20px; width: 10px; background: #43c1ea; animation: bars-radio 0.7s linear infinite; animation-delay: 0.14s; }
+
+@keyframes bars-radio { 50% { height: 16.66667px; } }
+
+@keyframes bars-radioParent { 20% { margin-top: 25px;
+    height: 25px; }
+  40% { margin-top: 33.33333px;
+    height: 16.66667px; }
+  100% { height: 50px;
+    margin-top: 0; } }
+
+/* line 66, C:/Users/Jacob/Desktop/simplyload/stylesheet.scss */ .spinner { display: inline-block; width: 50px; height: 50px; position: relative; }
+
+/* line 484, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .spinner:before { content: ""; position: absolute; top: 0; left: 0; bottom: 0; right: 0; border: 25px #43c1ea solid; animation: spinner-dots 2s linear infinite; border-image: radial-gradient(#43c1ea 50%, transparent 50%); }
+
+/* line 517, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .spinner:after { content: ""; }
+
+@keyframes spinner-dots { 50% { top: 12.5px;
+    bottom: 12.5px;
+    left: 12.5px;
+    right: 12.5px;
+    border-width: 16.66667px;
+    transform: rotate(180deg); }
+  100% { top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-width: 25px;
+    transform: rotate(360deg); } }
+
+/* line 70, C:/Users/Jacob/Desktop/simplyload/stylesheet.scss */ .spinnerW { display: inline-block; width: 50px; height: 50px; position: relative; }
+
+/* line 484, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .spinnerW:before { content: ""; position: absolute; top: 0; left: 0; bottom: 0; right: 0; border: 25px #43c1ea solid; animation: spinner-indicate 2s linear infinite; border-radius: 50%; border-width: 3.33333px; border-right-width: 0; border-top-width: 0; }
+
+/* line 517, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .spinnerW:after { content: ""; }
+
+@keyframes spinner-indicate { 0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); } }
+
+/* line 74, C:/Users/Jacob/Desktop/simplyload/stylesheet.scss */ .spinnerB { display: inline-block; width: 50px; height: 50px; position: relative; }
+
+/* line 484, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .spinnerB:before { content: ""; position: absolute; top: 0; left: 0; bottom: 0; right: 0; border: 25px #43c1ea solid; animation: spinner-ball 2s linear infinite; animation: none; transform: rotate(45deg); border: 1px solid #43c1ea; top: 12.5px; left: 12.5px; bottom: 12.5px; right: 12.5px; }
+
+/* line 517, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .spinnerB:after { content: ""; border: none; width: 12.5px; height: 12.5px; border-radius: 50%; position: absolute; animation: spinner-ball 2s linear infinite; top: 0; left: 18.75px; background: #43c1ea; }
+
+@keyframes spinner-ball { 25% { top: 18.75px;
+    left: 37.5px; }
+  50% { top: 37.5px;
+    left: 18.75px; }
+  75% { top: 18.75px;
+    left: 0; }
+  100% { top: 0;
+    left: 18.75px; } }
+
+/* line 78, C:/Users/Jacob/Desktop/simplyload/stylesheet.scss */ .spinnerI { display: inline-block; width: 50px; height: 50px; position: relative; animation: spinner-indicate 2s infinite linear; transform-origin: center; }
+
+/* line 484, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .spinnerI:before { content: ""; position: absolute; top: 0; left: 0; bottom: 0; right: 0; border: 25px #43c1ea solid; animation: spinner-indicate 2s linear infinite; animation: none; border-width: 5px; border-radius: 50%; }
+
+/* line 517, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .spinnerI:after { content: ""; position: absolute; bottom: 0; left: 12.5px; right: 12.5px; width: 25px; background: #43c1ea; height: 25px; border-radius: 50%; }
+
+/* line 82, C:/Users/Jacob/Desktop/simplyload/stylesheet.scss */ .barW { position: relative; background: #43c1ea; width: 10px; height: 50px; display: inline-block; margin-right: 25px; margin-left: 25px; animation: bars-waveParent 0.7s linear infinite; animation-delay: 0.14s; }
+
+/* line 558, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .barW:before { content: ""; position: absolute; bottom: 0; height: 50px; left: -20px; width: 10px; background: #43c1ea; animation: bars-wave 0.7s linear infinite; }
+
+/* line 571, C:/Users/Jacob/Desktop/simplyload/_simplyload.scss */ .barW:after { content: ""; position: absolute; bottom: 0; height: 50px; right: -20px; width: 10px; background: #43c1ea; animation: bars-wave 0.7s linear infinite; animation-delay: 0.35s; }
+
+@keyframes bars-wave { 20% { height: 25px; }
+  40% { height: 16.66667px; }
+  100% { height: 50px; } }
+
+@keyframes bars-waveParent { 50% { margin-top: 33.33333px;
+    height: 16.66667px; }
+  100% { height: 50px;
+    margin-top: 0; } }
+
+/*# sourceMappingURL=stylesheet.css.map */
